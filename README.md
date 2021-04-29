@@ -60,5 +60,32 @@ def extrai_naipe(carta):
 def extrai_valor(carta):
     return carta[ :-1]
 
+# Funcao para listagem dos movimentos possiveis:
+def lista_movimentos_possiveis(list1,i):
+    lista=[]
+    j=0
+    while j < len(list1):
+        item=str(list1[j])
+        lista.append(item)
+        j+=1
 
+    lista_mov = []
+    if i < 3:
+        if i == 0:
+            return lista_mov
+        elif i == 1:
+            if extrai_valor(lista[1]) == extrai_valor(lista[0]) or extrai_naipe(lista[1]) == extrai_naipe(lista[0]):
+                lista_mov.append(1)
+            return lista_mov
+        elif i == 2:
+            if extrai_valor(lista[1]) == extrai_valor(lista[2]) or extrai_naipe(lista[1]) == extrai_naipe(lista[2]):
+                lista_mov.append(1)
+            return lista_mov
+    else:
+        if extrai_valor(lista[i]) == extrai_valor(lista[i-1]) or extrai_naipe(lista[i]) == extrai_naipe(lista[i-1]):
+            lista_mov.append(1)
+        if extrai_valor(lista[i]) == extrai_valor(lista[i-3]) or extrai_naipe(lista[i]) == extrai_naipe(lista[i-3]):
+            lista_mov.append(3)
+        
+        return lista_mov
 
