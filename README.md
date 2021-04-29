@@ -1,10 +1,10 @@
 # Ep-2-2021
 trabalho ep2 2021
 oi
-#Bibliotecas que serao utilizadas:
+# Bibliotecas que serao utilizadas:
 import random
 
-#Funcoes a serem utilizadas:
+# Funcoes a serem utilizadas:
 def cria_baralho():
     faces = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
     naipes = ['♠','♥','♦','♣']
@@ -21,5 +21,13 @@ def cria_baralho():
         i+=1
     return baralho
 
+# Embaralhar as cartas do baralho:
+baralho = cria_baralho()
+embaralhado=[]
+while len(embaralhado) < len(baralho):
+    carta = random.choice(baralho)
+    if carta not in embaralhado:
+        embaralhado.append(carta)
 
-    
+
+
