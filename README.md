@@ -52,5 +52,13 @@ def colore_baralho(baralho):
         
     return baralho_color
 
+# Funcao para extrair naipe da carta   
+def extrai_naipe(carta):
+    return carta[-1]
+
+# Funcao para extrair VALOR da carta:
+def extrai_valor(carta):
+    return carta[ :-1]
+
 
 
