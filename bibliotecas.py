@@ -17,14 +17,14 @@ def cria_baralho():
         i+=1
     return baralho
 
-#Funcao para embaralhar o baralho:
-baralho = cria_baralho()
-embaralhado=[]
-while len(embaralhado) < len(baralho):
-    carta = random.choice(baralho)
-    if carta not in embaralhado:
-        embaralhado.append(carta)
-
+#Embaralhar as cartas do baralho:
+def embaralha_baralho(baralho):
+    embaralhado=[]
+    while len(embaralhado) < len(baralho):
+        carta = random.choice(baralho)
+        if carta not in embaralhado:
+            embaralhado.append(carta)
+    return embaralhado
 
 #Funcao para colorir o baralho:
 def colore_baralho(baralho):
