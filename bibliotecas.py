@@ -85,3 +85,35 @@ def lista_movimentos_possiveis(list1,i):
             lista_mov.append(3)
         
         return lista_mov
+
+#Funcao para verificar se existem movimentos possiveis:
+def verifica_movimentos_possiveis(list1):
+    lista=[]
+    j=0
+    while j < len(list1):
+        item=str(list1[j])
+        lista.append(item)
+        j+=1
+    
+    tamanho = len(lista)
+    i=0
+    lista_mov = []
+    while i < tamanho:
+        if i < 3 :
+            if i == 0:
+                lista_mov = []
+            elif i == 1:
+                if extrai_valor(lista[1]) == extrai_valor(lista[0]) or extrai_naipe(lista[1]) == extrai_naipe(lista[0]):
+                    lista_mov.append(1)
+            elif i == 2:
+                if extrai_valor(lista[1]) == extrai_valor(lista[2]) or extrai_naipe(lista[1]) == extrai_naipe(lista[2]):
+                    lista_mov.append(1)
+        else:
+            if extrai_valor(lista[i]) == extrai_valor(lista[i-1]) or extrai_naipe(lista[i]) == extrai_naipe(lista[i-1]):
+                lista_mov.append(1)
+            if extrai_valor(lista[i]) == extrai_valor(lista[i-3]) or extrai_naipe(lista[i]) == extrai_naipe(lista[i-3]):
+                lista_mov.append(3)
+        
+        i+=1
+
+    return lista_mov
