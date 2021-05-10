@@ -56,3 +56,19 @@ while loop:
 
         embaralhado = bibliotecas.empilha(embaralhado,carta,destino)
 
+    if vitoria:
+        print('voce ganhou :)')
+
+    elif not vitoria:
+        print('voce perdeu :( ')
+
+    jogar_novamente = input('Quer jogar novamente? (sim ou nao): ')
+
+    if jogar_novamente == 'nao':
+        loop = False
+
+    else:
+        loop = True
+        vitoria = True
+
+print('Volte Sempre!')
