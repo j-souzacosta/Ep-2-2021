@@ -27,27 +27,19 @@ def embaralha_baralho(baralho):
     return embaralhado
 
 #Funcao para colorir o baralho:
-def colore_baralho(baralho):
-    i=0
-    tamanho=len(baralho)
-    baralho_color=[]
-    while i < tamanho:
-        item = baralho[i]
-        teste = extrai_naipe(item)
-        valor=0
-        if teste == '♠':
-            valor = '\033[34m' + item + '\033[0m'
-        elif teste == '♥':
-            valor = '\033[31m' + item + '\033[0m'
-        elif teste == '♦':
-            valor = '\033[32m' + item + '\033[0m'
-        elif teste == '♣':
-            valor = '\033[33m' + item + '\033[0m'
-
-        baralho_color.append(valor)
-        i+=1
+def colore_carta(carta):
+    naipe = extrai_naipe(carta)
+    carta_colorida = ''
+    if naipe == '♠':
+        carta_colorida  = '\033[34m' + carta + '\033[0m'
+    elif naipe == '♥':
+        carta_colorida  = '\033[31m' + carta + '\033[0m'
+    elif naipe == '♦':
+        carta_colorida  = '\033[32m' + carta + '\033[0m'
+    elif naipe == '♣':
+        carta_colorida  = '\033[33m' + carta + '\033[0m'
         
-    return baralho_color
+    return carta_colorida
 
 #Funcao para extrair naipe da carta   
 def extrai_naipe(carta):
