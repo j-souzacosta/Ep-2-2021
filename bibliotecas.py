@@ -117,3 +117,19 @@ def verifica_movimentos_possiveis(list1):
         i+=1
 
     return lista_mov
+
+#Funcao para empilhar a carta:
+def empilha(lista,origem,destino):
+    if origem < 3:
+        lista.pop(destino)
+        return lista
+    else:
+        if destino == origem - 1:
+            lista.pop(destino)
+            
+        else:
+            i = origem
+            lista[destino] = lista[i]
+            lista.pop(origem)
+        
+        return lista
