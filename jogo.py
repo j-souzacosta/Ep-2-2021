@@ -27,12 +27,11 @@ while loop:
             carta= int(input(f'Escolha outra carta (Digite um numero de 1 a {len(embaralhado)}): ')) - 1
 
         lista_mov = []
-        lista_mov = lista_movimentos_possiveis(embaralhado,carta)
+        lista_mov = bibliotecas.lista_movimentos_possiveis(embaralhado,carta)
         destino = 0 
         
         while len(lista_mov) == 0:
             print('Essa carta nao pode ser movida')
             carta= int(input(f'Escolha outra carta (Digite um numero de 1 a {len(embaralhado)}): ')) - 1
-            lista_mov = lista_movimentos_possiveis(embaralhado,carta)
-        
+            lista_mov = bibliotecas.lista_movimentos_possiveis(embaralhado,carta)
         
