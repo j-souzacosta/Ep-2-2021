@@ -47,3 +47,12 @@ while loop:
             while destino > 2 or destino < 1:
                 print('Essa carta nao pode ser movida')
                 destino = int(input(' 1 ou 2: '))
+
+            if destino == 1:
+                destino = carta - 1
+                
+            else:
+                destino = carta - 3 
+
+        embaralhado = empilha(embaralhado,carta,destino)
+
