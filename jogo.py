@@ -34,4 +34,16 @@ while loop:
             print('Essa carta nao pode ser movida')
             carta= int(input(f'Escolha outra carta (Digite um numero de 1 a {len(embaralhado)}): ')) - 1
             lista_mov = bibliotecas.lista_movimentos_possiveis(embaralhado,carta)
-        
+
+        if len(lista_mov) == 1:
+            destino = carta - lista_mov[0] 
+
+        elif len(lista_mov) == 2:
+
+            print(f'1. {bibliotecas.colore_carta(embaralhado[carta-1])}')
+            print(f'2. {bibliotecas.colore_carta(embaralhado[carta - 3])}')
+            destino = int(input(' 1 ou 2: '))
+
+            while destino > 2 or destino < 1:
+                print('Essa carta nao pode ser movida')
+                destino = int(input(' 1 ou 2: '))
