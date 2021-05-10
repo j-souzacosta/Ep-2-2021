@@ -54,5 +54,5 @@ while loop:
             else:
                 destino = carta - 3 
 
-        embaralhado = empilha(embaralhado,carta,destino)
+        embaralhado = bibliotecas.empilha(embaralhado,carta,destino)
 
